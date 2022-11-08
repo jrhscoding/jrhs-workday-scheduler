@@ -20,6 +20,13 @@ $(document).ready(function () {
 
     };
 
+    $(".saveBtn").on('click', function () {
+        var textInput = $(this).siblings('.description').val();
+        var timeStamp = $(this).parent().attr('id');
+        localStorage.setItem(timeStamp, textInput);
+        alert('item saved')
+    });
+
     currentTime();
     var checkTime = setInterval(currentTime, 10000);
 
